@@ -1,0 +1,274 @@
+/* Dynamic Background Styles */
+.sun-background,
+.moon-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 4;
+  transition: opacity 1.5s ease, transform 1.5s ease;
+  overflow: hidden;
+}
+
+/* Sun styles - visible in light mode */
+.sun-background {
+  opacity: 0.7;
+}
+
+#dark-mode-toggle:checked ~ .sun-background {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.sun {
+  position: absolute;
+  top: 50px;
+  right: 100px;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, #ffef9e 0%, #ffde4a 50%, #ffc107 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 80px 40px rgba(255, 193, 7, 0.4);
+  animation: float 6s ease-in-out infinite, glow 4s ease-in-out infinite alternate;
+}
+
+.sun-ray {
+  position: absolute;
+  top: 110px;
+  right: 160px;
+  background-color: rgba(255, 193, 7, 0.6);
+  transform-origin: 0 0;
+}
+
+.sun-ray:nth-child(1) {
+  width: 180px;
+  height: 4px;
+  transform: rotate(0deg);
+  animation: rotate 20s linear infinite;
+}
+
+.sun-ray:nth-child(2) {
+  width: 160px;
+  height: 4px;
+  transform: rotate(45deg);
+  animation: rotate 25s linear infinite reverse;
+}
+
+.sun-ray:nth-child(3) {
+  width: 200px;
+  height: 4px;
+  transform: rotate(90deg);
+  animation: rotate 30s linear infinite;
+}
+
+.sun-ray:nth-child(4) {
+  width: 140px;
+  height: 4px;
+  transform: rotate(135deg);
+  animation: rotate 22s linear infinite reverse;
+}
+
+/* Moon styles - visible in dark mode */
+.moon-background {
+  opacity: 0;
+}
+
+#dark-mode-toggle:checked ~ .moon-background {
+  opacity: 0.8;
+  transform: translateY(0);
+}
+
+.moon {
+  position: absolute;
+  top: 80px;
+  right: 120px;
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 15px 15px 0 0 #e0e0e0;
+  animation: float 8s ease-in-out infinite, glow-moon 4s ease-in-out infinite alternate;
+}
+
+.star {
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50%;
+  animation: twinkle 3s infinite alternate;
+  opacity: 0;
+}
+
+#dark-mode-toggle:checked ~ .moon-background .star {
+  opacity: 1;
+}
+
+.star:nth-child(1) {
+  width: 4px;
+  height: 4px;
+  top: 50px;
+  right: 250px;
+  animation-delay: 0s;
+}
+
+.star:nth-child(2) {
+  width: 6px;
+  height: 6px;
+  top: 100px;
+  right: 300px;
+  animation-delay: 0.3s;
+}
+
+.star:nth-child(3) {
+  width: 3px;
+  height: 3px;
+  top: 150px;
+  right: 180px;
+  animation-delay: 0.6s;
+}
+
+.star:nth-child(4) {
+  width: 5px;
+  height: 5px;
+  top: 200px;
+  right: 220px;
+  animation-delay: 0.9s;
+}
+
+.star:nth-child(5) {
+  width: 4px;
+  height: 4px;
+  top: 120px;
+  right: 400px;
+  animation-delay: 1.2s;
+}
+
+/* Add more stars */
+.star:nth-child(6) {
+  width: 3px;
+  height: 3px;
+  top: 180px;
+  right: 350px;
+  animation-delay: 0.5s;
+}
+
+.star:nth-child(7) {
+  width: 5px;
+  height: 5px;
+  top: 70px;
+  right: 380px;
+  animation-delay: 0.8s;
+}
+
+.star:nth-child(8) {
+  width: 4px;
+  height: 4px;
+  top: 220px;
+  right: 280px;
+  animation-delay: 1.1s;
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 80px 40px rgba(255, 193, 7, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 100px 50px rgba(255, 193, 7, 0.6);
+  }
+}
+
+@keyframes glow-moon {
+  0% {
+    box-shadow: 15px 15px 0 0 #e0e0e0;
+  }
+  100% {
+    box-shadow: 15px 15px 0 0 #ffffff, 0 0 30px 15px rgba(255, 255, 255, 0.3);
+  }
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform-origin: center;
+    transform: rotate(0deg);
+  }
+  to {
+    transform-origin: center;
+    transform: rotate(360deg);
+  }
+}
+
+/* Add clouds for day mode */
+.cloud {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  opacity: 0.7;
+  transition: opacity 1.5s ease;
+}
+
+#dark-mode-toggle:checked ~ .sun-background .cloud {
+  opacity: 0;
+}
+
+.cloud-1 {
+  width: 100px;
+  height: 40px;
+  top: 120px;
+  right: 300px;
+  animation: float-cloud 15s linear infinite;
+}
+
+.cloud-2 {
+  width: 80px;
+  height: 30px;
+  top: 180px;
+  right: 180px;
+  animation: float-cloud 20s linear infinite;
+  animation-delay: 5s;
+}
+
+.cloud-3 {
+  width: 120px;
+  height: 45px;
+  top: 80px;
+  right: 400px;
+  animation: float-cloud 18s linear infinite;
+  animation-delay: 2s;
+}
+
+@keyframes float-cloud {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
