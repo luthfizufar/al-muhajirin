@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masjid Al-Muhajirin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/youtube.css">
+    <link rel="stylesheet" href="css/quran-recitations.css">
+    <link rel="stylesheet" href="css/dynamic-elements.css">
+    <link rel="stylesheet" href="css/dynamic-background.css">
+    <link rel="stylesheet" href="css/quran-enhanced.css">
+    <link rel="stylesheet" href="css/qibla-compass.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="js/quran.js" defer></script>
+    <script src="js/prayer-times.js" defer></script>
+    <script src="js/youtube.js" defer></script>
+    <script src="js/scroll-effects.js" defer></script>
+</head>
+<body>
+    <!-- Dark mode toggle checkbox -->
+    <input type="checkbox" id="dark-mode-toggle" class="dark-mode-checkbox">
+    
+    <!-- Mobile menu toggle checkbox -->
+    <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-checkbox">
+    
+    
+    
+    <!-- Background pattern overlay -->
+    <div class="pattern-overlay"></div>
+    
+    <!-- Header with navigation -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Masjid Al-Muhajirin</h1>
+            </div>
+            
+            <!-- Mobile menu hamburger button -->
+            <label for="mobile-menu-toggle" class="mobile-menu-button" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </label>
+            
+            <div class="header-controls">
+                <!-- Dark mode toggle -->
+                <div class="dark-mode-container">
+                    <label for="dark-mode-toggle" class="dark-mode-label" aria-label="Toggle dark mode">
+                        <div class="dark-mode-toggle">
+                            <div class="toggle-track">
+                                <div class="sun-icon"></div>
+                                <div class="moon-icon"></div>
+                            </div>
+                            <div class="toggle-thumb"></div>
+                        </div>
+                    </label>
+                </div>
+                
+                <!-- Main navigation -->
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#home" class="animated-border">Home</a></li>
+                        <li><a href="#activities" class="animated-border">Activities</a></li>
+                        <li><a href="#quran-recitations" class="animated-border">Quran</a></li>
+                        <li><a href="#about" class="animated-border">About</a></li>
+                        <li><a href="#prayer-times" class="animated-border">Prayer Times</a></li>
+                        <li><a href="#contact" class="animated-border">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero section -->
+    <section id="home" class="hero">
+        <!-- Dynamic Background Elements -->
+        <div class="sun-background">
+            <div class="sun"></div>
+            <div class="sun-ray"></div>
+            <div class="sun-ray"></div>
+            <div class="sun-ray"></div>
+            <div class="sun-ray"></div>
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+        </div>
+        
+        <div class="moon-background">
+            <div class="moon"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h2>Welcome to Masjid Al-Muhajirin</h2>
+                <p>A place of peace, reflection, and community</p>
+                <div class="cta-button">
+                    <a href="#activities" class="ripple">Explore Our Activities</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities section -->
+    <section id="activities" class="activities">
+        <div class="container">
+            <h2 class="scroll-reveal">Our Activities</h2>
+            <p class="section-description scroll-reveal">Join us in our regular events and activities that strengthen our faith and community</p>
+            
+            <div class="activities-grid">
+                <div class="activity-card scroll-reveal">
+                    <div class="activity-image">
+                        <img src="assets/quran-study.jpg" alt="Quran Study Circle">
+                    </div>
+                    <div class="activity-content">
+                        <h3>Quran Study Circle</h3>
+                        <p>Weekly sessions exploring the teachings of the Holy Quran with qualified scholars.</p>
+                        <p class="activity-time">Every Wednesday & Sunday, 9:00 AM</p>
+                    </div>
+                </div>
+                
+                <div class="activity-card scroll-reveal">
+                    <div class="activity-image">
+                        <img src="assets/pengajian-ibu.jpg" alt="Pengajian Ibu-Ibu">
+                    </div>
+                    <div class="activity-content">
+                        <h3>Pengajian Ibu-Ibu</h3>
+                        <p>Weekly Islamic study sessions specifically for women in our community.</p>
+                        <p class="activity-time">Every Saturday, 4:00 PM</p>
+                    </div>
+                </div>
+                
+                <div class="activity-card scroll-reveal">
+                    <div class="activity-image">
+                        <img src="assets/charity-event.jpg" alt="Charity Drive">
+                    </div>
+                    <div class="activity-content">
+                        <h3>Charity Drive</h3>
+                        <p>Monthly charity initiatives to help those in need within our community and beyond.</p>
+                    </div>
+                </div>
+                
+                <div class="activity-card scroll-reveal">
+                    <div class="activity-image">
+                        <img src="assets/youth-quran.jpg" alt="Learn to Read Quran">
+                    </div>
+                    <div class="activity-content">
+                        <h3>Learn to Read Quran</h3>
+                        <p>Daily Quran reading lessons designed specifically for young people in our community.</p>
+                        <p class="activity-time">Every day, 4:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quran Recitations Section -->
+    <section id="quran-recitations" class="quran-recitations">
+        <div class="container">
+            <h2 class="scroll-reveal">Quran Recitations & Reading</h2>
+            <p class="section-description scroll-reveal">Listen to beautiful recitations of the Holy Quran and read along with translations</p>
+            
+            <div class="quran-container scroll-reveal">
+                <div class="quran-controls">
+                    <div class="quran-selector surah-selector">
+                        <label for="surah-select">Select Surah:</label>
+                        <select id="surah-select">
+                            <option value="">Loading surahs...</option>
+                        </select>
+                        <div class="loading-indicator" id="surah-loading">
+                            <div class="spinner"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="quran-selector reciter-selector">
+                        <label for="reciter-select">Select Reciter:</label>
+                        <select id="reciter-select">
+                            <option value="7">Mishari Rashid al-`Afasy</option>
+                            <option value="1">Abdul Basit Abdul Samad</option>
+                            <option value="3">Abdul Rahman Al-Sudais</option>
+                            <option value="4">Abu Bakr al-Shatri</option>
+                            <option value="5">Hani ar-Rifai</option>
+                            <option value="6">Mahmoud Khalil Al-Husary</option>
+                            <option value="2">Mahmoud Ali Al-Banna</option>
+                            <option value="8">Mohamed Siddiq al-Minshawi</option>
+                            <option value="9">Muhammad Ayyoub</option>
+                            <option value="10">Muhammad Jibreel</option>
+                            <option value="11">Sa`ud ash-Shuraym</option>
+                        </select>
+                    </div>
+                    
+                    <div class="quran-selector translation-selector">
+                        <label for="translation-select">Select Translation:</label>
+                        <select id="translation-select">
+                            <option value="en">English</option>
+                            <option value="id" selected>Indonesian</option>
+                            <option value="tr">Turkish</option>
+                            <option value="ur">Urdu</option>
+                            <option value="ml">Malayalam</option>
+                            <option value="fr">French</option>
+                            <option value="zh">Chinese</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="quran-player">
+                    <div class="player-header">
+                        <div class="surah-info">
+                            <h3 class="surah-title" id="current-surah-title">Loading...</h3>
+                            <p class="surah-subtitle" id="surah-info">Please wait while we load the Quran data</p>
+                        </div>
+                        <div class="audio-player">
+                            <audio id="quran-audio" controls>
+                                <source src="/placeholder.svg" type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                    
+                    <div class="quran-content">
+                        <div class="quran-text" id="quran-text">
+                            <div class="loading-state">
+                                <div class="spinner"></div>
+                                <p>Loading Quran text...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quran-features">
+                    <div class="feature-card hover-lift">
+                        <h3>Bookmark Verses</h3>
+                        <p>Save your favorite verses for quick access later.</p>
+                        <button class="feature-button ripple" id="bookmark-button">Bookmark Current Verse</button>
+                    </div>
+                    
+                    <div class="feature-card hover-lift">
+                        <h3>Share</h3>
+                        <p>Share verses with friends and family.</p>
+                        <div class="share-buttons">
+                            <button class="share-button ripple" data-platform="whatsapp">WhatsApp</button>
+                            <button class="share-button ripple" data-platform="facebook">Facebook</button>
+                            <button class="share-button ripple" data-platform="twitter">Twitter</button>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card hover-lift">
+                        <h3>Display Options</h3>
+                        <p>Customize your reading experience.</p>
+                        <div class="display-options">
+                            <div class="option">
+                                <label for="font-size">Font Size:</label>
+                                <select id="font-size">
+                                    <option value="small">Small</option>
+                                    <option value="medium" selected>Medium</option>
+                                    <option value="large">Large</option>
+                                </select>
+                            </div>
+                            <div class="option">
+                                <label for="mushaf-mode">Mushaf Mode:</label>
+                                <input type="checkbox" id="mushaf-mode">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="scroll-reveal">About Us</h2>
+            <div class="about-content">
+                <div class="about-text scroll-reveal">
+                    <p>Masjid Al-Muhajirin is dedicated to serving as a center for Islamic worship, education, and community development. We strive to provide a welcoming environment for Muslims and non-Muslims alike to learn about Islam and engage in meaningful dialogue.</p>
+            
+                    <p>We envision a vibrant, inclusive community that embodies the principles of Islam through worship, learning, and service. Our goal is to nurture spiritual growth, foster brotherhood and sisterhood, and contribute positively to the broader society.</p>
+                    
+                    <div class="youtube-channel-link">
+                        <a href="https://www.youtube.com/@almuhajirin-e3s" target="_blank" class="youtube-button ripple">
+                            <span class="youtube-icon"></span>
+                            Visit Our YouTube Channel
+                        </a>
+                    </div>
+                </div>
+                <div class="about-image scroll-reveal">
+                    <img src="masjid.jpeg" alt="Interior of Masjid Al-Muhajirin">
+                </div>
+            </div>
+            
+            <!-- YouTube Videos Section -->
+            <div class="youtube-videos">
+                <h3 class="scroll-reveal">Most Popular Videos</h3>
+                <p class="section-description scroll-reveal">Watch our most popular lectures, events, and community activities</p>
+                
+                <div class="youtube-loading" id="youtube-loading">
+                    <div class="spinner"></div>
+                    <p>Loading videos from our YouTube channel...</p>
+                </div>
+                
+                <div class="youtube-videos-grid" id="youtube-videos-grid">
+                    <!-- Videos will be loaded here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prayer Times Section -->
+    <section id="prayer-times" class="prayer-times">
+        <div class="container">
+            <h2 class="scroll-reveal">Prayer Times</h2>
+            <p class="section-description scroll-reveal">Daily prayer times for Bandung, West Java (WIB)</p>
+            
+            <!-- Bento Grid for Prayer Times -->
+            <div class="bento-grid">
+                <!-- Date and Time Card -->
+                <div class="bento-item date-time">
+                    <div class="date" id="current-date">Loading date...</div>
+                    <div class="time" id="current-time">Loading time...</div>
+                    <div class="location">Bandung, West Java, Indonesia</div>
+                </div>
+                
+                <!-- Next Prayer Card -->
+                <div class="bento-item next-prayer">
+                    <div class="next-prayer-label">Next Prayer</div>
+                    <div class="next-prayer-name" id="next-prayer-name">Maghrib</div>
+                    <div class="next-prayer-time" id="next-prayer-time">18:02</div>
+                    <div class="time-remaining" id="time-remaining">in 2 hours 15 minutes</div>
+                </div>
+                
+                <!-- Prayer Time Cards -->
+                <div class="bento-item prayer">
+                    <div class="prayer-name">Fajr</div>
+                    <div class="prayer-time" id="fajr-time">04:35</div>
+                </div>
+                
+                <div class="bento-item prayer">
+                    <div class="prayer-name">Sunrise</div>
+                    <div class="prayer-time" id="sunrise-time">06:02</div>
+                </div>
+                
+                <div class="bento-item prayer">
+                    <div class="prayer-name">Dhuhr</div>
+                    <div class="prayer-time" id="dhuhr-time">12:05</div>
+                </div>
+                
+                <div class="bento-item prayer">
+                    <div class="prayer-name">Asr</div>
+                    <div class="prayer-time" id="asr-time">15:15</div>
+                </div>
+                
+                <div class="bento-item prayer">
+                    <div class="prayer-name">Maghrib</div>
+                    <div class="prayer-time" id="maghrib-time">18:02</div>
+                </div>
+                
+                <div class="bento-item prayer">
+                    <div class="prayer-name">Isha</div>
+                    <div class="prayer-time" id="isha-time">19:12</div>
+                </div>
+                
+                <!-- Qibla Direction Card -->
+                <div class="bento-item qibla">
+                    <div class="qibla-direction">
+                        <h4>Qibla Direction</h4>
+                        <div class="compass-outer">
+                            <div class="compass-inner">
+                                <div class="compass-arrow"></div>
+                            </div>
+                        </div>
+                        <div class="compass-degrees">Calculating...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="scroll-reveal">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info scroll-reveal">
+                    <h3>Get in Touch</h3>
+                    <p><strong>Address:</strong> Komplek Bumi Harapan, Cibiru Hilir, Bandung, West Java, Indonesia</p>
+                    <p><strong>Phone:</strong> </p>
+                    <p><strong>Email:</strong> </p>
+                    
+                    <h3>Prayer Times</h3>
+                    <div class="prayer-times">
+                        <div class="prayer-time">
+                            <span>Fajr</span>
+                            <span id="contact-fajr">04:35</span>
+                        </div>
+                        <div class="prayer-time">
+                            <span>Dhuhr</span>
+                            <span id="contact-dhuhr">12:05</span>
+                        </div>
+                        <div class="prayer-time">
+                            <span>Asr</span>
+                            <span id="contact-asr">15:15</span>
+                        </div>
+                        <div class="prayer-time">
+                            <span>Maghrib</span>
+                            <span id="contact-maghrib">18:02</span>
+                        </div>
+                        <div class="prayer-time">
+                            <span>Isha</span>
+                            <span id="contact-isha">19:12</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Masjid Al-Muhajirin</h3>
+                    <p>A place of peace and community</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#activities">Activities</a></li>
+                        <li><a href="#quran-recitations">Quran</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#prayer-times">Prayer Times</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Masjid Al-Muhajirin. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/qibla-compass.js" defer></script>
+</body>
+</html>
