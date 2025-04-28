@@ -1,0 +1,204 @@
+/* Planets Styles */
+.planet {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 1s ease, transform 0.5s ease;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  z-index: 8; /* Increased z-index to appear in front of background */
+}
+
+/* Make planets visible only in dark mode */
+#dark-mode-toggle:checked ~ * .planet {
+  opacity: 1;
+}
+
+/* Mars-like planet */
+.planet-1 {
+  width: 40px;
+  height: 40px;
+  top: 15%;
+  right: 56%;
+  background: radial-gradient(circle at 30% 30%, #e27b58, #c23616);
+  box-shadow: 0 0 20px rgba(226, 123, 88, 0.4);
+  transform: translateZ(-10px);
+}
+
+/* Saturn-like planet with ring */
+.planet-2 {
+  width: 120px;
+  height: 120px;
+  top: 20%;
+  right: 80%;
+  background: radial-gradient(circle at 30% 30%,rgb(33, 24, 75),rgb(75, 64, 122));
+  box-shadow: 0 0 25px rgba(246, 59, 199, 0.4);
+  transform: translateZ(-20px);
+}
+
+
+
+/* Blue planet (Neptune-like) */
+.planet-3 {
+  width: 35px;
+  height: 35px;
+  top: 70%;
+  right: 22%;
+  background: radial-gradient(circle at 30% 30%, #48dbfb, #0abde3);
+  box-shadow: 0 0 20px rgba(72, 219, 251, 0.4);
+  transform: translateZ(-15px);
+}
+
+/* Small rocky planet */
+.planet-4 {
+  width: 65px;
+  height: 65px;
+  top: 40%;
+  right: 60%;
+  background: radial-gradient(circle at 30% 30%, #aaa69d, #7f8c8d);
+  box-shadow: 0 0 15px rgba(170, 166, 157, 0.4);
+  transform: translateZ(-5px);
+}
+
+/* Gas giant (Jupiter-like) */
+.planet-5 {
+  width: 80px;
+  height: 80px;
+  top: 49%;
+  right: 31%;
+  background: radial-gradient(circle at 30% 30%,rgb(107, 116, 61),rgb(175, 98, 84));
+  box-shadow: 0 0 30px rgba(255, 190, 118, 0.4);
+  transform: translateZ(-25px);
+}
+
+/* Add animation for planets */
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(0) rotate(-360deg);
+  }
+}
+
+.planet-1 {
+  animation: orbit 120s linear infinite;
+}
+
+.planet-2 {
+  animation: orbit 180s linear infinite reverse;
+}
+
+.planet-3 {
+  animation: orbit 150s linear infinite;
+}
+
+.planet-4 {
+  animation: orbit 100s linear infinite reverse;
+}
+
+.planet-5 {
+  animation: orbit 200s linear infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .planet-1 {
+    width: 30px;
+    height: 30px;
+  }
+
+  .planet-2 {
+    width: 45px;
+    height: 45px;
+  }
+
+  .planet-2::after {
+    width: 60px;
+    height: 15px;
+  }
+
+  .planet-3 {
+    width: 25px;
+    height: 25px;
+  }
+
+  .planet-4 {
+    width: 20px;
+    height: 20px;
+  }
+
+  .planet-5 {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 576px) {
+  .planet-1 {
+    width: 25px;
+    height: 25px;
+    right: 10%;
+  }
+
+  .planet-2 {
+    width: 35px;
+    height: 35px;
+    right: 25%;
+  }
+
+  .planet-2::after {
+    width: 45px;
+    height: 10px;
+  }
+
+  .planet-3 {
+    width: 20px;
+    height: 20px;
+    right: 15%;
+  }
+
+  .planet-4 {
+    width: 15px;
+    height: 15px;
+    right: 50%;
+  }
+
+  .planet-5 {
+    width: 40px;
+    height: 40px;
+    right: 60%;
+  }
+}
+
+/* Additional responsive adjustments for very small screens */
+@media (max-width: 400px) {
+  .planet-1 {
+    width: 20px;
+    height: 20px;
+    right: 8%;
+  }
+
+  .planet-2 {
+    width: 30px;
+    height: 30px;
+    right: 20%;
+  }
+
+  .planet-3 {
+    width: 18px;
+    height: 18px;
+    right: 12%;
+  }
+
+  .planet-4 {
+    width: 12px;
+    height: 12px;
+    right: 45%;
+  }
+
+  .planet-5 {
+    width: 35px;
+    height: 35px;
+    right: 55%;
+  }
+}

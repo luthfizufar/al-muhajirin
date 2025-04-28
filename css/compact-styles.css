@@ -1,0 +1,91 @@
+/* Additional compact styles */
+.hero {
+  position: relative;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.celestial-container {
+  z-index: 1;
+}
+
+/* Adjust 3D elements for hero section */
+.sun-3d {
+  top: 20px;
+  right: 50px;
+  width: 120px;
+  height: 120px;
+}
+
+.moon-3d {
+  top: 40px;
+  right: 70px;
+  width: 100px;
+  height: 100px;
+}
+
+/* Make all sections more compact */
+h2.scroll-reveal,
+h3.scroll-reveal {
+  margin-bottom: 10px;
+}
+
+.quran-text {
+  max-height: 400px;
+}
+
+.feature-card {
+  padding: 15px;
+}
+
+.activity-image {
+  height: 180px;
+}
+
+/* Footer compact styles */
+footer {
+  padding: 40px 0 20px;
+}
+
+.footer-content {
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+/* Compact YouTube button */
+.youtube-channel-link {
+  margin-top: 20px;
+}
+
+/* Compact prayer times */
+.time {
+  font-size: 2.5rem;
+}
+
+.next-prayer-name {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.next-prayer-time {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* Compact activity cards */
+.activity-card {
+  border-radius: 15px;
+}
+
+.activity-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.activity-button {
+  padding: 10px 20px;
+  margin-top: 15px;
+}

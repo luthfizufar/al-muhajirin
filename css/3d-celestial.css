@@ -1,0 +1,560 @@
+/* 3D Celestial Elements */
+
+/* Container for 3D elements */
+.celestial-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1; /* Increased z-index to appear in front of background */
+  overflow: hidden;
+  perspective: 1000px;
+}
+
+/* 3D Sun Animation */
+.sun-3d {
+  position: absolute;
+  top: 50px;
+  right: 15%;
+  width: 150px;
+  height: 150px;
+  transform-style: preserve-3d;
+  opacity: 0.9;
+  transition: opacity 1s ease, transform 1s ease;
+  z-index: 3;
+}
+
+#dark-mode-toggle:checked ~ * .sun-3d {
+  opacity: 0;
+  transform: translateY(-200px) scale(0.5);
+}
+
+.sun-core {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff176 0%, #ffd54f 50%, #ffb300 100%);
+  box-shadow: 0 0 60px 30px rgba(255, 179, 0, 0.4), 0 0 100px 60px rgba(255, 179, 0, 0.2);
+  transform: translateZ(0);
+}
+
+.sun-ray {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 4px;
+  background: linear-gradient(90deg, rgba(255, 179, 0, 0.8) 0%, rgba(255, 179, 0, 0) 100%);
+  transform-origin: 0 0;
+  border-radius: 2px;
+}
+
+/* Generate rays around the sun */
+.sun-ray:nth-child(1) {
+  transform: rotate(0deg) translateX(75px);
+}
+.sun-ray:nth-child(2) {
+  transform: rotate(10deg) translateX(75px);
+}
+.sun-ray:nth-child(3) {
+  transform: rotate(20deg) translateX(75px);
+}
+.sun-ray:nth-child(4) {
+  transform: rotate(30deg) translateX(75px);
+}
+.sun-ray:nth-child(5) {
+  transform: rotate(40deg) translateX(75px);
+}
+.sun-ray:nth-child(6) {
+  transform: rotate(50deg) translateX(75px);
+}
+.sun-ray:nth-child(7) {
+  transform: rotate(60deg) translateX(75px);
+}
+.sun-ray:nth-child(8) {
+  transform: rotate(70deg) translateX(75px);
+}
+.sun-ray:nth-child(9) {
+  transform: rotate(80deg) translateX(75px);
+}
+.sun-ray:nth-child(10) {
+  transform: rotate(90deg) translateX(75px);
+}
+.sun-ray:nth-child(11) {
+  transform: rotate(100deg) translateX(75px);
+}
+.sun-ray:nth-child(12) {
+  transform: rotate(110deg) translateX(75px);
+}
+.sun-ray:nth-child(13) {
+  transform: rotate(120deg) translateX(75px);
+}
+.sun-ray:nth-child(14) {
+  transform: rotate(130deg) translateX(75px);
+}
+.sun-ray:nth-child(15) {
+  transform: rotate(140deg) translateX(75px);
+}
+.sun-ray:nth-child(16) {
+  transform: rotate(150deg) translateX(75px);
+}
+.sun-ray:nth-child(17) {
+  transform: rotate(160deg) translateX(75px);
+}
+.sun-ray:nth-child(18) {
+  transform: rotate(170deg) translateX(75px);
+}
+.sun-ray:nth-child(19) {
+  transform: rotate(180deg) translateX(75px);
+}
+.sun-ray:nth-child(20) {
+  transform: rotate(190deg) translateX(75px);
+}
+.sun-ray:nth-child(21) {
+  transform: rotate(200deg) translateX(75px);
+}
+.sun-ray:nth-child(22) {
+  transform: rotate(210deg) translateX(75px);
+}
+.sun-ray:nth-child(23) {
+  transform: rotate(220deg) translateX(75px);
+}
+.sun-ray:nth-child(24) {
+  transform: rotate(230deg) translateX(75px);
+}
+.sun-ray:nth-child(25) {
+  transform: rotate(240deg) translateX(75px);
+}
+.sun-ray:nth-child(26) {
+  transform: rotate(250deg) translateX(75px);
+}
+.sun-ray:nth-child(27) {
+  transform: rotate(260deg) translateX(75px);
+}
+.sun-ray:nth-child(28) {
+  transform: rotate(270deg) translateX(75px);
+}
+.sun-ray:nth-child(29) {
+  transform: rotate(280deg) translateX(75px);
+}
+.sun-ray:nth-child(30) {
+  transform: rotate(290deg) translateX(75px);
+}
+.sun-ray:nth-child(31) {
+  transform: rotate(300deg) translateX(75px);
+}
+.sun-ray:nth-child(32) {
+  transform: rotate(310deg) translateX(75px);
+}
+.sun-ray:nth-child(33) {
+  transform: rotate(320deg) translateX(75px);
+}
+.sun-ray:nth-child(34) {
+  transform: rotate(330deg) translateX(75px);
+}
+.sun-ray:nth-child(35) {
+  transform: rotate(340deg) translateX(75px);
+}
+.sun-ray:nth-child(36) {
+  transform: rotate(350deg) translateX(75px);
+}
+
+/* 3D Moon Animation */
+.moon-3d {
+  position: absolute;
+  top: 50px;
+  right: 17%;
+  width: 140px;
+  height: 140px;
+  transform-style: preserve-3d;
+  opacity: 0.2;
+  transition: opacity 1s ease, transform 1s ease;
+  transform: translateY(200px) scale(0.5);
+  z-index: 4; /* Increased z-index to appear in front of background */
+}
+
+#dark-mode-toggle:checked ~ * .moon-3d {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.moon-body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #f5f5f5 0%, #e0e0e0 50%, #bdbdbd 100%);
+  box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.2), inset -30px -30px 50px rgba(0, 0, 0, 0.2);
+  transform: translateZ(0);
+}
+
+.moon-crater {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.moon-crater:nth-child(1) {
+  width: 20px;
+  height: 20px;
+  top: 30px;
+  left: 25px;
+}
+
+.moon-crater:nth-child(2) {
+  width: 15px;
+  height: 15px;
+  top: 70px;
+  left: 60px;
+}
+
+.moon-crater:nth-child(3) {
+  width: 25px;
+  height: 25px;
+  top: 40px;
+  left: 80px;
+}
+
+.moon-crater:nth-child(4) {
+  width: 10px;
+  height: 10px;
+  top: 90px;
+  left: 40px;
+}
+
+.moon-crater:nth-child(5) {
+  width: 12px;
+  height: 12px;
+  top: 20px;
+  left: 50px;
+}
+
+/* 3D Stars */
+.star-3d {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.3);
+  opacity: 1;
+  transition: opacity 1s ease;
+  z-index: 8;
+}
+
+#dark-mode-toggle:checked ~ * .hero .star-3d {
+  opacity: 1;
+}
+
+/* Position stars randomly but without animation */
+.star-3d:nth-child(1) {
+  top: 10vh;
+  left: 20vw;
+}
+.star-3d:nth-child(2) {
+  top: 15vh;
+  left: 40vw;
+}
+.star-3d:nth-child(3) {
+  top: 25vh;
+  left: 10vw;
+}
+.star-3d:nth-child(4) {
+  top: 30vh;
+  left: 70vw;
+}
+.star-3d:nth-child(5) {
+  top: 40vh;
+  left: 30vw;
+}
+.star-3d:nth-child(6) {
+  top: 50vh;
+  left: 80vw;
+}
+.star-3d:nth-child(7) {
+  top: 60vh;
+  left: 15vw;
+}
+.star-3d:nth-child(8) {
+  top: 70vh;
+  left: 60vw;
+}
+.star-3d:nth-child(9) {
+  top: 80vh;
+  left: 25vw;
+}
+.star-3d:nth-child(10) {
+  top: 85vh;
+  left: 75vw;
+}
+.star-3d:nth-child(11) {
+  top: 5vh;
+  left: 65vw;
+}
+.star-3d:nth-child(12) {
+  top: 35vh;
+  left: 85vw;
+}
+.star-3d:nth-child(13) {
+  top: 45vh;
+  left: 5vw;
+}
+.star-3d:nth-child(14) {
+  top: 55vh;
+  left: 45vw;
+}
+.star-3d:nth-child(15) {
+  top: 75vh;
+  left: 35vw;
+}
+.star-3d:nth-child(16) {
+  top: 20vh;
+  left: 55vw;
+}
+.star-3d:nth-child(17) {
+  top: 90vh;
+  left: 50vw;
+}
+.star-3d:nth-child(18) {
+  top: 15vh;
+  left: 90vw;
+}
+.star-3d:nth-child(19) {
+  top: 65vh;
+  left: 95vw;
+}
+.star-3d:nth-child(20) {
+  top: 95vh;
+  left: 10vw;
+}
+
+/* Animations */
+@keyframes rotate3d {
+  0% {
+    transform: rotate3d(1, 1, 1, 0deg);
+  }
+  100% {
+    transform: rotate3d(1, 1, 1, 360deg);
+  }
+}
+
+@keyframes rotate3d-moon {
+  0% {
+    transform: rotate3d(0.5, 1, 0.2, 0deg);
+  }
+  100% {
+    transform: rotate3d(0.5, 1, 0.2, 360deg);
+  }
+}
+
+@keyframes pulse-sun {
+  0% {
+    box-shadow: 0 0 60px 30px rgba(255, 179, 0, 0.4), 0 0 100px 60px rgba(255, 179, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 80px 40px rgba(255, 179, 0, 0.6), 0 0 120px 80px rgba(255, 179, 0, 0.3);
+  }
+}
+
+@keyframes twinkle-3d {
+  0% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+/* Make stars twinkle in dark mode */
+#dark-mode-toggle:checked ~ * .hero .star-3d:nth-child(1) {
+  animation: twinkle-3d 2s infinite alternate;
+  animation-delay: 0.1s;
+}
+
+#dark-mode-toggle:checked ~ * .hero .star-3d:nth-child(2) {
+  animation: twinkle-3d 3s infinite alternate;
+  animation-delay: 0.5s;
+}
+
+#dark-mode-toggle:checked ~ * .hero .star-3d:nth-child(3) {
+  animation: twinkle-3d 2.5s infinite alternate;
+  animation-delay: 0.8s;
+}
+
+#dark-mode-toggle:checked ~ * .hero .star-3d:nth-child(4) {
+  animation: twinkle-3d 3.5s infinite alternate;
+  animation-delay: 0.2s;
+}
+
+#dark-mode-toggle:checked ~ * .hero .star-3d:nth-child(5) {
+  animation: twinkle-3d 2.8s infinite alternate;
+  animation-delay: 1.2s;
+}
+
+/* Add animation to more stars */
+#dark-mode-toggle:checked ~ * .hero .star-3d:nth-child(6),
+#dark-mode-toggle:checked ~ * .hero .star-3d:nth-child(11),
+#dark-mode-toggle:checked ~ * .hero .star-3d:nth-child(16) {
+  animation: twinkle-3d 3.2s infinite alternate;
+  animation-delay: 0.7s;
+}
+
+#dark-mode-toggle:checked ~ * .hero .star-3d:nth-child(7),
+#dark-mode-toggle:checked ~ * .hero .star-3d:nth-child(12),
+#dark-mode-toggle:checked ~ * .hero .star-3d:nth-child(17) {
+  animation: twinkle-3d 2.7s infinite alternate;
+  animation-delay: 1.5s;
+}
+
+#dark-mode-toggle:checked ~ * .hero .star-3d:nth-child(8),
+#dark-mode-toggle:checked ~ * .hero .star-3d:nth-child(13),
+#dark-mode-toggle:checked ~ * .hero .star-3d:nth-child(18) {
+  animation: twinkle-3d 3.8s infinite alternate;
+  animation-delay: 0.3s;
+}
+
+#dark-mode-toggle:checked ~ * .hero .star-3d:nth-child(9),
+#dark-mode-toggle:checked ~ * .hero .star-3d:nth-child(14),
+#dark-mode-toggle:checked ~ * .hero .star-3d:nth-child(19) {
+  animation: twinkle-3d 2.3s infinite alternate;
+  animation-delay: 1.8s;
+}
+
+#dark-mode-toggle:checked ~ * .hero .star-3d:nth-child(10),
+#dark-mode-toggle:checked ~ * .hero .star-3d:nth-child(15),
+#dark-mode-toggle:checked ~ * .hero .star-3d:nth-child(20) {
+  animation: twinkle-3d 3.4s infinite alternate;
+  animation-delay: 0.9s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .sun-3d {
+    width: 120px;
+    height: 120px;
+    right: 80px;
+  }
+
+  .moon-3d {
+    width: 100px;
+    height: 100px;
+    right: 100px;
+  }
+
+  .sun-ray {
+    width: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sun-3d {
+    width: 100px;
+    height: 100px;
+    right: 60px;
+    top: 40px;
+  }
+
+  .moon-3d {
+    width: 80px;
+    height: 80px;
+    right: 80px;
+    top: 60px;
+  }
+
+  .sun-ray {
+    width: 120px;
+  }
+
+  .moon-crater:nth-child(1) {
+    width: 16px;
+    height: 16px;
+  }
+
+  .moon-crater:nth-child(3) {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .sun-3d {
+    width: 80px;
+    height: 80px;
+    right: 40px;
+    top: 30px;
+  }
+
+  .moon-3d {
+    width: 60px;
+    height: 60px;
+    right: 60px;
+    top: 50px;
+  }
+
+  .sun-ray {
+    width: 100px;
+    height: 3px;
+  }
+
+  .moon-crater:nth-child(1) {
+    width: 12px;
+    height: 12px;
+    top: 15px;
+    left: 12px;
+  }
+
+  .moon-crater:nth-child(2) {
+    width: 10px;
+    height: 10px;
+    top: 35px;
+    left: 30px;
+  }
+
+  .moon-crater:nth-child(3) {
+    width: 15px;
+    height: 15px;
+    top: 20px;
+    left: 40px;
+  }
+
+  .moon-crater:nth-child(4) {
+    width: 8px;
+    height: 8px;
+    top: 45px;
+    left: 20px;
+  }
+
+  .moon-crater:nth-child(5) {
+    width: 9px;
+    height: 9px;
+    top: 10px;
+    left: 25px;
+  }
+}
+
+@media (max-width: 400px) {
+  .sun-3d {
+    width: 60px;
+    height: 60px;
+    right: 30px;
+    top: 20px;
+  }
+
+  .moon-3d {
+    width: 50px;
+    height: 50px;
+    right: 40px;
+    top: 40px;
+  }
+
+  .sun-ray {
+    width: 80px;
+    height: 2px;
+  }
+}

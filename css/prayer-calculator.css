@@ -1,0 +1,218 @@
+/* Prayer Calculator Styles */
+.prayer-calculator {
+  background-color: var(--primary-color);
+}
+
+.calculator-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.calculator-form,
+.prayer-results {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: var(--card-shadow);
+}
+
+.calculator-form h3,
+.prayer-results h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.location-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.calculate-button {
+  padding: 12px 25px;
+  background-color: var(--accent-gold);
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  align-self: flex-start;
+}
+
+.calculate-button:hover {
+  background-color: var(--accent-green);
+  color: white;
+}
+
+.date-display,
+.location-display {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: var(--dark-gray);
+}
+
+.prayer-times-table {
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.prayer-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.3s ease;
+}
+
+.prayer-row:last-child {
+  border-bottom: none;
+}
+
+.prayer-row:nth-child(odd) {
+  background-color: var(--light-gray);
+}
+
+.prayer-row:hover {
+  background-color: var(--medium-gray);
+}
+
+.prayer-name {
+  font-weight: 600;
+}
+
+.prayer-time {
+  color: var(--accent-blue);
+  font-weight: 600;
+}
+
+.qibla-direction {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.qibla-direction h4 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.qibla-compass {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.compass-outer {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: var(--light-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.compass-outer::before {
+  content: "N";
+  position: absolute;
+  top: 5px;
+  font-weight: 700;
+}
+
+.compass-outer::after {
+  content: "S";
+  position: absolute;
+  bottom: 5px;
+  font-weight: 700;
+}
+
+.compass-inner {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background-color: var(--card-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.compass-inner::before {
+  content: "E";
+  position: absolute;
+  right: 5px;
+  font-weight: 700;
+}
+
+.compass-inner::after {
+  content: "W";
+  position: absolute;
+  left: 5px;
+  font-weight: 700;
+}
+
+.compass-arrow {
+  width: 4px;
+  height: 60px;
+  background-color: var(--accent-gold);
+  position: relative;
+  transform: rotate(58.2deg);
+}
+
+.compass-arrow::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 12px solid var(--accent-gold);
+  margin-top: -12px;
+}
+
+.compass-degrees {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent-gold);
+}
+
+@media (max-width: 992px) {
+  .calculator-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .calculator-form,
+  .prayer-results {
+    padding: 20px;
+  }
+
+  .calculator-form h3,
+  .prayer-results h3 {
+    font-size: 1.5rem;
+  }
+
+  .compass-outer {
+    width: 120px;
+    height: 120px;
+  }
+
+  .compass-inner {
+    width: 100px;
+    height: 100px;
+  }
+
+  .compass-arrow {
+    height: 45px;
+  }
+}

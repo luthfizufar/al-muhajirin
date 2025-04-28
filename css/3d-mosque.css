@@ -1,0 +1,339 @@
+/* 3D Mosque Styles */
+.mosque-3d-container {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 250px;
+  perspective: 1500px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.mosque-3d {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(10deg);
+  transition: all 1s ease;
+  right:75%
+}
+
+/* Base of the mosque */
+.mosque-base {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 120px;
+  background: linear-gradient(to bottom, var(--accent-light), var(--accent-color));
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Main dome */
+.mosque-dome {
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 80px;
+  background: linear-gradient(to bottom, var(--accent-light), var(--accent-color));
+  border-radius: 50% 50% 0 0;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Dome top */
+.dome-top {
+  position: absolute;
+  bottom: 190px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: var(--accent-gold, #e0c097);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(224, 192, 151, 0.5);
+}
+
+/* Minarets */
+.minaret {
+  position: absolute;
+  bottom: 0;
+  width: 20px;
+  height: 180px;
+  background: linear-gradient(to bottom, var(--accent-light), var(--accent-color));
+  border-radius: 5px 5px 0 0;
+}
+
+.minaret::after {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15px;
+  height: 15px;
+  background-color: var(--accent-gold, #e0c097);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(224, 192, 151, 0.5);
+}
+
+.minaret-left {
+  left: 28px;
+}
+
+.minaret-right {
+  right: 28px;
+}
+
+/* Windows */
+.mosque-window {
+  position: absolute;
+  width: 15px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 15px 15px 0 0;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.window-1 {
+  bottom: 40px;
+  left: 50px;
+}
+
+.window-2 {
+  bottom: 40px;
+  left: 90px;
+}
+
+.window-3 {
+  bottom: 40px;
+  right: 90px;
+}
+
+.window-4 {
+  bottom: 40px;
+  right: 50px;
+}
+
+/* Door */
+.mosque-door {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 20px 20px 0 0;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.door-arch {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 20px 20px 0 0;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode adjustments */
+#dark-mode-toggle:checked ~ * .mosque-base,
+#dark-mode-toggle:checked ~ * .mosque-dome,
+#dark-mode-toggle:checked ~ * .minaret {
+  background: linear-gradient(to bottom, var(--accent-dark), var(--accent-color));
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+#dark-mode-toggle:checked ~ * .dome-top,
+#dark-mode-toggle:checked ~ * .minaret::after {
+  background-color: var(--accent-light);
+  box-shadow: 0 0 15px rgba(212, 193, 156, 0.6);
+}
+
+#dark-mode-toggle:checked ~ * .mosque-window {
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.1), 0 0 5px rgba(212, 193, 156, 0.3);
+}
+
+/* Glow effect in dark mode */
+#dark-mode-toggle:checked ~ * .mosque-3d {
+  filter: drop-shadow(0 0 10px rgba(212, 193, 156, 0.3));
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .mosque-3d-container {
+    width: 240px;
+    height: 200px;
+    bottom: 10px;
+  }
+
+  .mosque-base {
+    width: 160px;
+    height: 100px;
+  }
+
+  .mosque-dome {
+    width: 80px;
+    height: 60px;
+    bottom: 100px;
+  }
+
+  .dome-top {
+    width: 16px;
+    height: 16px;
+    bottom: 150px;
+  }
+
+  .minaret {
+    width: 16px;
+    height: 140px;
+  }
+
+  .minaret-left {
+    left: 15px;
+  }
+
+  .minaret-right {
+    right: 15px;
+  }
+
+  .mosque-window {
+    width: 12px;
+    height: 24px;
+  }
+
+  .window-1 {
+    left: 40px;
+  }
+
+  .window-2 {
+    left: 70px;
+  }
+
+  .window-3 {
+    right: 70px;
+  }
+
+  .window-4 {
+    right: 40px;
+  }
+
+  .mosque-door {
+    width: 30px;
+    height: 50px;
+  }
+
+  .door-arch {
+    width: 30px;
+    height: 15px;
+    bottom: 50px;
+  }
+}
+
+@media (max-width: 576px) {
+  .mosque-3d-container {
+    width: 200px;
+    height: 160px;
+  }
+
+  .mosque-base {
+    width: 140px;
+    height: 80px;
+  }
+
+  .mosque-dome {
+    width: 70px;
+    height: 50px;
+    bottom: 80px;
+  }
+
+  .dome-top {
+    width: 14px;
+    height: 14px;
+    bottom: 120px;
+  }
+
+  .minaret {
+    width: 14px;
+    height: 120px;
+  }
+
+  .minaret-left {
+    left: 10px;
+  }
+
+  .minaret-right {
+    right: 10px;
+  }
+}
+
+/* Animation for the mosque */
+@keyframes float-mosque {
+  0% {
+    transform: rotateX(10deg) translateY(0);
+  }
+  50% {
+    transform: rotateX(10deg) translateY(-5px);
+  }
+  100% {
+    transform: rotateX(10deg) translateY(0);
+  }
+}
+
+.mosque-3d {
+  animation: float-mosque 6s ease-in-out infinite;
+}
+
+/* Window glow animation in dark mode */
+@keyframes window-glow {
+  0% {
+    box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.1), 0 0 5px rgba(212, 193, 156, 0.3);
+  }
+  50% {
+    box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.2), 0 0 10px rgba(212, 193, 156, 0.5);
+  }
+  100% {
+    box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.1), 0 0 5px rgba(212, 193, 156, 0.3);
+  }
+}
+
+#dark-mode-toggle:checked ~ * .mosque-window {
+  animation: window-glow 4s infinite alternate;
+}
+
+#dark-mode-toggle:checked ~ * .mosque-window:nth-child(odd) {
+  animation-delay: 1s;
+}
+
+/* Dome and minaret top glow animation in dark mode */
+@keyframes top-glow {
+  0% {
+    box-shadow: 0 0 15px rgba(212, 193, 156, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(212, 193, 156, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(212, 193, 156, 0.6);
+  }
+}
+
+#dark-mode-toggle:checked ~ * .dome-top,
+#dark-mode-toggle:checked ~ * .minaret::after {
+  animation: top-glow 3s infinite alternate;
+}
+
+#dark-mode-toggle:checked ~ * .minaret:nth-child(odd)::after {
+  animation-delay: 1.5s;
+}
